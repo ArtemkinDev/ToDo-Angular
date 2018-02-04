@@ -1,0 +1,52 @@
+.todo-item {
+  display: flex;
+  font-size: 1rem;
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: #fff;
+  transition: all .2s;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: 1em;
+  align-items: center;
+}
+
+.todo-item.completed * {
+  color: lightgray;
+}
+
+.todo-item .checkbox {
+  margin-right: .5rem;
+}
+
+.todo-item .title,
+.todo-item .textfield {
+  margin-right: auto;
+}
+
+.todo-item .textfield {
+  display: none;
+}
+
+.todo-item.completed .title {
+  text-decoration: line-through;
+}
+
+.todo-item.editing .checkbox,
+.todo-item.editing .title {
+  display: none;
+}
+
+.todo-item.editing .textfield {
+  display: block;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.todo-item button {
+  opacity: 0;
+  transition: all .2s;
+}
+
+.todo-item:hover button:not(.checkbox) {
+  opacity: 1;
+}

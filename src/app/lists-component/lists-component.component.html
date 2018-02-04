@@ -1,0 +1,11 @@
+<ul id="todo-list" >
+  <app-list-item-component
+    *ngFor="let item of listsOfItem"
+    [list]="item"
+    (deleteItem)=deletedId($event)
+  ></app-list-item-component>
+  <li *ngIf="!listsOfItem.length">
+    Извините! Список дел пуст!
+  </li>
+</ul>
+

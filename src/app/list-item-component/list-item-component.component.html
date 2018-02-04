@@ -1,0 +1,7 @@
+<li class="todo-item" [ngClass]="{completed:taskDone}">
+  <input type="checkbox" class="checkbox" #checkbox (click)="done()">
+  <label class="title">{{list.text}}</label>
+  <input type="text" class="textfield">
+  <button class="edit">Изменить</button>
+  <button class="remove" (click)="deletedItem(list.id)">Удалить</button>
+</li>
