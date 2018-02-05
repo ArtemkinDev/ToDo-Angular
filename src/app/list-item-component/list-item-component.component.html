@@ -2,6 +2,6 @@
   <input type="checkbox" class="checkbox" #checkbox (click)="done()">
   <label class="title">{{list.text}}</label>
   <input type="text" class="textfield" #newtext value="{{list.text}}">
-  <button class="edit" (click)="editItem(list.id, newtext.value)">Изменить</button>
+  <button class="edit" (click)="editItem(list.id, newtext.value)" #btn>Изменить</button>
   <button class="remove" (click)="deletedItem(list.id)">Удалить</button>
 </li>
