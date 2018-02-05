@@ -2,7 +2,8 @@
   <app-list-item-component
     *ngFor="let item of listsOfItem"
     [list]="item"
-    (deleteItem)=deletedId($event)
+    (deleteItem) = deletedId($event)
+    (editedItem) = editItem($event)
   ></app-list-item-component>
   <li *ngIf="!listsOfItem.length">
     Извините! Список дел пуст!

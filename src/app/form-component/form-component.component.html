@@ -1,6 +1,6 @@
 <app-header-component></app-header-component>
 <form id="todo-form">
-  <input id="add-input" type="text">
-  <button id="add-button" type="submit">Добавить</button>
+  <input id="add-input" type="text" #input [ngClass]="{error:isEmpty}">
+  <button id="add-button" type="button" (click)="addNewItem()">Добавить</button>
 </form>
 <app-lists-component></app-lists-component>

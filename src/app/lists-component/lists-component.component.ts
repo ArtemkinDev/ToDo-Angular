@@ -18,10 +18,11 @@ export class ListsComponentComponent implements OnInit {
   }
 
   deletedId(id: number) {
-    let index = this.listsOfItem.findIndex((item) => {
-      return item.id === id;
-    });
-    this.listsOfItem.splice(index, 1);
+   this.todoLists.deleteItem(id);
+  }
+
+  editItem(newItem) {
+    this.todoLists.editItem(newItem.id, newItem.text);
   }
 
 }

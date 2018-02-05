@@ -10,9 +10,12 @@ export class ListItemComponentComponent implements OnInit {
 
   @Input('list') list: Item;
   @ViewChild('checkbox') checkbox: ElementRef;
+  @ViewChild('newtext') newtext: ElementRef;
   @Output('deleteItem') deleteItem = new EventEmitter<number>();
+  @Output('editedItem') editedItem = new EventEmitter<any>();
 
   public taskDone = false;
+  public isEditable = false;
 
   constructor() { }
 
@@ -24,6 +27,16 @@ export class ListItemComponentComponent implements OnInit {
 
   deletedItem(id: number) {
     this.deleteItem.emit(id);
+  }
+
+  editItem(id: number, text: string) {
+    if (!this.isEditable) {
+      this.isEditable = !this.isEditable;
+    } else {
+      this.editedItem.emit({id, text});
+      this.isEditable = !this.isEditable;
+    }
+    
   }
 
 }

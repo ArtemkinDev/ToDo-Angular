@@ -9,6 +9,9 @@
   flex: 1;
   outline: none;
   transition: all .2s;
+  &.error {
+  	border-color: red;
+  }
 }
 
 #todo-form input:focus {
